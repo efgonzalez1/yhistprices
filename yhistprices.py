@@ -47,3 +47,11 @@ for symbol in data.keys():
 # Print data for kicks
 for k in data.keys():
     print("%s   [%s]  :    %s" % (data[k][0], k, data[k][1]))
+
+
+""" Save results in new CSV file """
+with open('nyx.csv', 'wb') as f:
+    writer = csv.writer(f)
+    for k in data.keys():
+        row = [k, data[k][0], data[k][1]]
+        writer.writerow(row)
